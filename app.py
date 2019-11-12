@@ -37,32 +37,34 @@ def add_numbers_post():
 
 
 @app.route('/multiply_numbers', methods=['GET', 'POST'])
-
 def multiply_numbers_post():
-	if request.method == 'GET':
-		return render_template('multiply_numbers.html')
-	elif request.method == 'POST':
-		print(request.form['text'].split()
-		      total = 1
-		      try:
-		      	for str_num in request.form['text'].split():
-		      		total *= int(str_num)
-		      	return render_template('multiply_numbers.html', result=str(total))
-		      exept ValueError:
-		      	return "Oh boy! The numbers have to be seperated by spaces!"
-		      
-		      
-		      
-# def sum_of_numbers(a_string):
-#     numbers_list = a_string.split(" ")
-#     counter = int(numbers_list[0])
-#     for number in numbers_list:
-#         counter += int(number)
-#     numbers_sum = counter
-#     print("The sum of these numbers is: " + str(numbers_sum))
+	  # --> ['5', '6', '8']
+	  # print(type(request.form['text']))
+	  if request.method == 'GET':
+	  	return render_template('multiply_numbers.html')
+	  elif request.method == 'POST':
+  	      print(request.form['text'].split())
+  	      total = 1
+  	      try:
+  	      	for str_num in request.form['text'].split():
+  	      		total *= int(str_num)
+  	      	return render_template('add_numbers.html', result=str(total))
+  	      except ValueError:
+  	      	return "Easy now! Let's keep it simple! 2 numbers with a space between them please"
 
-
-
+	
+# 	if request.method == 'GET':
+# 		return render_template('multiply_numbers.html')
+# 	elif request.method == 'POST':
+# 		print(request.form['text'].split()
+# 		total = 1
+#   	      try:
+#   	      	for str_num in request.form['text'].split():
+#   	      		total += int(str_num)
+#   	      	return render_template('add_numbers.html', result=str(total))
+#   	      except ValueError:
+# 		      	return "Oh boy! The numbers have to be seperated by spaces!"
+	      
 	
 @app.route('/shopping_list', methods=['GET','POST'])
 def shopping_list_post():
