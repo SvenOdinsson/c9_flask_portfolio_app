@@ -43,7 +43,7 @@ def multiply_numbers_post():
 		return render_template('multiply_numbers.html')
 	elif request.method == 'POST':
 		print(request.form['text'].split()
-		      total = request.form['text'].split()[0]
+		      total = 1
 		      try:
 		      	for str_num in request.form['text'].split():
 		      		total *= int(str_num)
