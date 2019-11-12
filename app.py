@@ -36,6 +36,34 @@ def add_numbers_post():
   	      	return "Easy now! Let's keep it simple! 2 numbers with a space between them please"
 
 
+@app.route('/multiply_numbers', methods=['GET', 'POST'])
+
+def multiply_numbers_post():
+	if request.method == 'GET':
+		return render_template('multiply_numbers.html')
+	elif request.method == 'POST':
+		print(request.form['text'].split()
+		      total = request.form['text'].split()[0]
+		      try:
+		      	for str_num in request.form['text'].split():
+		      		total *= int(str_num)
+		      	return render_template('multiply_numbers.html', result=str(total))
+		      exept ValueError:
+		      	return "Oh boy! The numbers have to be seperated by spaces!"
+		      
+		      
+		      
+# def sum_of_numbers(a_string):
+#     numbers_list = a_string.split(" ")
+#     counter = int(numbers_list[0])
+#     for number in numbers_list:
+#         counter += int(number)
+#     numbers_sum = counter
+#     print("The sum of these numbers is: " + str(numbers_sum))
+
+
+
+	
 @app.route('/shopping_list', methods=['GET','POST'])
 def shopping_list_post():
 	  # --> ['5', '6', '8']
@@ -57,6 +85,7 @@ def shopping_list_post():
             return render_template('shopping_list.html', result="\n".join([str(item) for item in shop_list]))
           except ValueError:
             return "Easy now! Let's keep it simple! Just words with a space between them"
+
           
   	      
 @app.route('/time', methods=['GET','POST'])
