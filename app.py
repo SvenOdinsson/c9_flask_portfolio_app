@@ -55,8 +55,8 @@ def multiply_numbers_post():
 
 @app.route('/to_do_list', methods=['GET'])
 def to_do_list_page():
-# 	return render_template('to_do_list.html')
-	redirect('https://Z4G4ZM3C762OHVDD.anvil.app/6HS3TFHFZ72LLZWL4LUW6LSP')
+	return render_template('to_do_list.html')
+# 	redirec('https://Z4G4ZM3C762OHVDD.anvil.app/6HS3TFHFZ72LLZWL4LUW6LSP')
 # 	if request.method == 'GET':
 # 		return render_template('multiply_numbers.html')
 # 	elif request.method == 'POST':
