@@ -52,6 +52,10 @@ def multiply_numbers_post():
   	      except ValueError:
   	      	return "Easy now! Let's keep it simple! 2 numbers with a space between them please"
 
+
+@app.route('/to_do_list', methods=['GET'])
+def to_do_list_page():
+	return render_template('to_do_list.html')
 	
 # 	if request.method == 'GET':
 # 		return render_template('multiply_numbers.html')
